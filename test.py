@@ -1,5 +1,5 @@
-from constant import WhitePoint
+from constant import Illuminant
 import color
 
-color.xyz2lab([1, 1, 1], WhitePoint.d65)
-color.xyY2XYZ([1,1,1])
+print(color.xyz2lab([1, 1, 1], Illuminant.d65))
+#color.xyY2XYZ([1,1,1])
