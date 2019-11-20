@@ -61,4 +61,16 @@ def lab2xyz(lab, WhitePoint=Illuminant.d65):
     Z = zr * WhitePoint[2]
     return [X, Y, Z]
 
+def xyz2luv(xyz, WhitePoint=Illuminant.d65):
+    X = xyz[0]
+    Y = xyz[1]
+    Z = xyz[2]
+    Xr = WhitePoint[0]
+    Yr = WhitePoint[1]
+    Zr = WhitePoint[2]
+    yr = Y/Yr
+    u_prime = 4*X / (X+15*Y+3*Z)
+    v_prime = 9*Y / (X+15*Y+3*Z)
+    ur_prime = 4*Xr / (Xr+15*Yr+3*Zr)
+    vr_prime = 9*Yr / (Xr+15*Yr+3*Zr)
     
